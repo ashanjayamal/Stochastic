@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Stocastic</title>
+  <title>Chapter 3 Brownian Motion | Stocastic</title>
   <meta name="description" content="<p>bla bla
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Stocastic" />
+  <meta property="og:title" content="Chapter 3 Brownian Motion | Stocastic" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>bla bla
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Stocastic" />
+  <meta name="twitter:title" content="Chapter 3 Brownian Motion | Stocastic" />
   
   <meta name="twitter:description" content="<p>bla bla
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="introduction.html"/>
 
-<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -82,13 +82,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Stochastic </a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Premilaries</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#brownian-motion"><i class="fa fa-check"></i><b>1.1</b> Brownian Motion</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#definition-of-brownian-motion"><i class="fa fa-check"></i><b>1.2</b> Definition of Brownian Motion</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#simple-properties-of-brownian-motion"><i class="fa fa-check"></i><b>1.3</b> Simple Properties of Brownian Motion</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#wiener-integral"><i class="fa fa-check"></i><b>1.4</b> Wiener Integral</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Premilaries</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#integrals"><i class="fa fa-check"></i><b>2.1</b> Integrals</a>
@@ -97,7 +91,12 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#random-walks"><i class="fa fa-check"></i><b>2.2</b> Random Walks</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="random-walk-to-brownier-motion..html"><a href="random-walk-to-brownier-motion..html"><i class="fa fa-check"></i><b>3</b> Random Walk to Brownier Motion.</a></li>
+<li class="chapter" data-level="3" data-path="brownian-motion.html"><a href="brownian-motion.html"><i class="fa fa-check"></i><b>3</b> Brownian Motion</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="brownian-motion.html"><a href="brownian-motion.html#definition-of-brownian-motion"><i class="fa fa-check"></i><b>3.1</b> Definition of Brownian Motion</a></li>
+<li class="chapter" data-level="3.2" data-path="brownian-motion.html"><a href="brownian-motion.html#simple-properties-of-brownian-motion"><i class="fa fa-check"></i><b>3.2</b> Simple Properties of Brownian Motion</a></li>
+<li class="chapter" data-level="3.3" data-path="brownian-motion.html"><a href="brownian-motion.html#wiener-integral"><i class="fa fa-check"></i><b>3.3</b> Wiener Integral</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
 
@@ -118,24 +117,8 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Stocastic</h1>
-<p class="author"><em>Ashan Jayamal</em></p>
-<p class="date"><em>2024-07-26</em></p>
-</div>
-<div id="premilaries" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Premilaries<a href="index.html#premilaries" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="definition">
-<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 1.1  </strong></span>Consider a set <span class="math inline">\(X\)</span>.
-An <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{F}\)</span> of subsets of <span class="math inline">\(X\)</span> is a collection <span class="math inline">\(\mathcal{F}\)</span> of subsets of <span class="math inline">\(X\)</span> satisfying the following conditions:</p>
-<ul>
-<li><span class="math inline">\(\emptyset \in \mathcal{F}\)</span></li>
-<li>If <span class="math inline">\(B \in \mathcal{F}\)</span>, then its complement <span class="math inline">\(B^c\)</span> is also in <span class="math inline">\(F\)</span></li>
-<li>If <span class="math inline">\(B_1, B_2, \ldots\)</span> is a countable collection of sets in <span class="math inline">\(\mathcal{F}\)</span>, then their union <span class="math inline">\(\bigcup_{n=1}^\infty B_n\)</span> is also in <span class="math inline">\(\mathcal{F}\)</span>.</li>
-</ul>
-</div>
-<div id="brownian-motion" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Brownian Motion<a href="index.html#brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="brownian-motion" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Brownian Motion<a href="brownian-motion.html#brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Let <span class="math inline">\((\Omega, F, P)\)</span> be a probability space. A stochastic process is a measurable function <span class="math inline">\(X(t, \omega)\)</span> defined on the product space <span class="math inline">\([0,\infty) \times \Omega\)</span>. In particular:</p>
 <ul>
 <li>For each <span class="math inline">\(t\)</span>, <span class="math inline">\(X(t, \cdot)\)</span> is a random variable.</li>
@@ -143,9 +126,8 @@ An <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline"
 </ul>
 <p>For convenience, the random variable <span class="math inline">\(X(t, \cdot)\)</span> will be written as <span class="math inline">\(X(t)\)</span> or <span class="math inline">\(X_t\)</span>.
 Thus, a stochastic process <span class="math inline">\(X(t, \omega)\)</span> can also be expressed as <span class="math inline">\(X(t)(\omega)\)</span> or simply as <span class="math inline">\(X(t)\)</span> or <span class="math inline">\(X_t\)</span>.</p>
-</div>
-<div id="definition-of-brownian-motion" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Definition of Brownian Motion<a href="index.html#definition-of-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definition-of-brownian-motion" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Definition of Brownian Motion<a href="brownian-motion.html#definition-of-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
 <p><span id="def:Brownian_Motaion" class="definition"><strong>(#def:Brownian_Motaion) </strong></span>A stochastic process <span class="math inline">\(B(t, \omega)\)</span> is called a Brownian motion if it satisfies the following conditions:</p>
 <ol style="list-style-type: decimal">
@@ -162,11 +144,11 @@ are independent.</li>
 </ol>
 </div>
 </div>
-<div id="simple-properties-of-brownian-motion" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Simple Properties of Brownian Motion<a href="index.html#simple-properties-of-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-properties-of-brownian-motion" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Simple Properties of Brownian Motion<a href="brownian-motion.html#simple-properties-of-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let<span class="math inline">\(B(t)\)</span> be a fixed Brownian motion. We give below some simple properties that follow directly from the definition of Brownian motion.</p>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-2" class="proposition"><strong>Proposition 1.1  </strong></span>For any <span class="math inline">\(t &gt; 0\)</span>, <span class="math inline">\(B(t)\)</span> is normally distributed with mean 0 and variance <span class="math inline">\(t\)</span>. For any <span class="math inline">\(s, t \geq 0\)</span>, we have <span class="math inline">\(\mathbb{E}[B(s)B(t)] = \min\{s, t\}\)</span>.</p>
+<p><span id="prp:unnamed-chunk-2" class="proposition"><strong>Proposition 3.1  </strong></span>For any <span class="math inline">\(t &gt; 0\)</span>, <span class="math inline">\(B(t)\)</span> is normally distributed with mean 0 and variance <span class="math inline">\(t\)</span>. For any <span class="math inline">\(s, t \geq 0\)</span>, we have <span class="math inline">\(\mathbb{E}[B(s)B(t)] = \min\{s, t\}\)</span>.</p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-1" class="remark"><em>Remark</em>. </span>Regarding Definition @ref(def:Brownian_Motaion), it can be proved that condition (2) and E[B(s)B(t)] = min{s, t} imply condition (3).</p>
@@ -177,16 +159,16 @@ are independent.</li>
 which is equal to <span class="math inline">\(\min\{s, t\}\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-5" class="proposition"><strong>Proposition 1.2  (Translation Invariance) </strong></span>For a fixed <span class="math inline">\(t_0 \geq 0\)</span>, the stochastic process <span class="math inline">\(B(t) = B(t + t_0) - B(t_0)\)</span> is also a Brownian motion.</p>
+<p><span id="prp:unnamed-chunk-5" class="proposition"><strong>Proposition 3.2  (Translation Invariance) </strong></span>For a fixed <span class="math inline">\(t_0 \geq 0\)</span>, the stochastic process <span class="math inline">\(B(t) = B(t + t_0) - B(t_0)\)</span> is also a Brownian motion.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-6" class="proposition"><strong>Proposition 1.3  (Scaling invariance) </strong></span>For any real number <span class="math inline">\(\lambda &gt; 0\)</span>, the stochastic process
+<p><span id="prp:unnamed-chunk-6" class="proposition"><strong>Proposition 3.3  (Scaling invariance) </strong></span>For any real number <span class="math inline">\(\lambda &gt; 0\)</span>, the stochastic process
 <span class="math inline">\(B(t) = \frac{B(\lambda t)}{\sqrt{\lambda}}\)</span>
 is also a Brownian motion.</p>
 </div>
 </div>
-<div id="wiener-integral" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Wiener Integral<a href="index.html#wiener-integral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="wiener-integral" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Wiener Integral<a href="brownian-motion.html#wiener-integral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -195,8 +177,8 @@ is also a Brownian motion.</p>
           </div>
         </div>
       </div>
+<a href="introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -227,7 +209,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Brownian_Motain.Rmd",
 "text": "Edit"
 },
 "history": {
