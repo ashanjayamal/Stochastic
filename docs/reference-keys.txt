@@ -6,6 +6,7 @@ eq:1
 def:unnamed-chunk-7
 def:unnamed-chunk-8
 def:unnamed-chunk-9
+thm:unnamed-chunk-10
 premilaries
 brownian-motion
 definition-of-brownian-motion
