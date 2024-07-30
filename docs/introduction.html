@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-07-26" />
+<meta name="date" content="2024-07-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,13 +91,18 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#integrals"><i class="fa fa-check"></i><b>2.1</b> Integrals</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#riemann-integral"><i class="fa fa-check"></i><b>2.1.1</b> Riemann Integral</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#random-walks"><i class="fa fa-check"></i><b>2.2</b> Random Walks</a></li>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#events-and-probability"><i class="fa fa-check"></i><b>2.1</b> Events and Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#random-variables"><i class="fa fa-check"></i><b>2.2</b> Random Variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="random-walk-to-brownier-motion..html"><a href="random-walk-to-brownier-motion..html"><i class="fa fa-check"></i><b>3</b> Random Walk to Brownier Motion.</a></li>
+<li class="chapter" data-level="4" data-path="les.html"><a href="les.html"><i class="fa fa-check"></i><b>4</b> Les</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="les.html"><a href="les.html#integrals"><i class="fa fa-check"></i><b>4.1</b> Integrals</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="les.html"><a href="les.html#riemann-integral"><i class="fa fa-check"></i><b>4.1.1</b> Riemann Integral</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>4.2</b> Random Walks</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
 
@@ -120,26 +125,89 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="introduction" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="integrals" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Integrals<a href="introduction.html#integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>First we review the definitions of the Riemann integral in calculus and the Riemann–Stieltjes integral in advanced calculus.</p>
-<div id="riemann-integral" class="section level3 hasAnchor" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Riemann Integral<a href="introduction.html#riemann-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let <span class="math inline">\(f\)</span> be an bounded function defined on a finite closed interval <span class="math inline">\([a, b]\)</span>. Then <span class="math inline">\(f\)</span> is called <em>Riemann integrable</em> if the following limit exists.
-<span class="math display">\[\begin{equation}
-x
-\end{equation}\]</span></p>
+<div id="events-and-probability" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Events and Probability<a href="introduction.html#events-and-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 2.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a non-empty set. A <strong><span class="math inline">\(\sigma\)</span>-field</strong> <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(\Omega\)</span> is a family of subsets of <span class="math inline">\(\Omega\)</span> such that:</p>
+<ul>
+<li>The empty set <span class="math inline">\(\emptyset\)</span> belongs to <span class="math inline">\(\mathcal{F}\)</span>;</li>
+<li>If <span class="math inline">\(A\)</span> belongs to <span class="math inline">\(\mathcal{F}\)</span>, then so does the complement <span class="math inline">\(\Omega \setminus A\)</span>;</li>
+<li>If <span class="math inline">\(A_1, A_2, \ldots\)</span> is a sequence of sets in <span class="math inline">\(\mathcal{F}\)</span>, then their union <span class="math inline">\(A_1 \cup A_2 \cup \cdots\)</span> also belongs to <span class="math inline">\(\mathcal{F}\)</span>.</li>
+</ul>
 </div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Example 2.1  </strong></span>a</p>
 </div>
-<div id="random-walks" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Random Walks<a href="introduction.html#random-walks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Consider a random walk starting at 0 with jumps <span class="math inline">\(h\)</span> and <span class="math inline">\(-h\)</span> equally likely at times <span class="math inline">\(\delta, 2\delta,...\)</span>, where <span class="math inline">\(h,\delta&gt;0\)</span> . More precisely, let <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> be a sequence of independent and identically distributed random variables with
-<span class="math display">\[P(X_j = h) = P(X_j = −h) = \frac{1}{2}\]</span></p>
-<p>Let <span class="math inline">\(Y_{\delta,h}(0) =0\)</span>
-<span class="math display">\[Y_{\delta,h}(n\delta) = X_1 + X_2 + \ldots + X_n\]</span>
-For <span class="math inline">\(t &gt; 0\)</span> define <span class="math inline">\(Y_{\delta,h}(t)\)</span> by linearization:
-(i.e: For <span class="math inline">\(n\delta &lt; t &lt; (n + 1)\delta\)</span>, define
-<span class="math display">\[Y_{\delta,h}(t) = \frac{(n + 1)\delta - t}{\delta} Y_{\delta,h}(n\delta) + \frac{t - n\delta}{\delta} Y_{\delta,h}((n + 1)\delta).\]</span></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 2.2  </strong></span>Let <span class="math inline">\(\mathcal{F}\)</span> be a <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span>. A probability measure <span class="math inline">\(P\)</span> is a function
+<span class="math inline">\(P : \mathcal{F} \to [0, 1]\)</span>
+such that</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(P(\Omega) = 1\)</span>;</li>
+<li>if <span class="math inline">\(A_1, A_2, \ldots\)</span> are pairwise disjoint sets (that is, <span class="math inline">\(A_i \cap A_j = \emptyset\)</span> for <span class="math inline">\(i \neq j\)</span>) belonging to <span class="math inline">\(\mathcal{F}\)</span>, then
+<span class="math display">\[
+P\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i);
+\]</span></li>
+</ol>
+<ul>
+<li>The triple <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> is called a probability space.</li>
+<li>The sets belonging to <span class="math inline">\(\mathcal{F}\)</span> are called events.</li>
+<li>An event <span class="math inline">\(A\)</span> is said to occur almost surely (a.s.) whenever <span class="math inline">\(P(A) = 1\)</span>.</li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.2  </strong></span>Let consider,</p>
+<ul>
+<li><span class="math inline">\(\Omega=[0, 1]\)</span> with the</li>
+<li><span class="math inline">\(\sigma\)</span>-field =<span class="math inline">\(\mathcal{F} = \mathcal{B}([0, 1])\)</span> of Borel sets <span class="math inline">\(B \subseteq [0, 1]\)</span>, and</li>
+<li>Lebesgue measure <span class="math inline">\(P = \text{Leb}\)</span> on <span class="math inline">\([0, 1]\)</span>.</li>
+</ul>
+<p>Then <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> is a probability space.</p>
+<p>Recall that <span class="math inline">\(\text{Leb}\)</span> is the unique measure defined on Borel sets such that
+[a, b] = b - a]
+for any interval <span class="math inline">\([a, b]\)</span>. (In fact, <span class="math inline">\(\text{Leb}\)</span> can be extended to a larger <span class="math inline">\(\sigma\)</span>-field, but we shall need Borel sets only.)</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 2.1  </strong></span>Show that if <span class="math inline">\(A_1, A_2, \ldots\)</span> is an expanding sequence of events, that is
+<span class="math display">\[ A_1 \subseteq A_2 \subseteq A_3 \subseteq \cdots \]</span></p>
+<p>then
+<span class="math display">\[ P\left(\bigcup_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} P(A_n). \]</span></p>
+<p>Similarly, if <span class="math inline">\(A_1, A_2, \ldots\)</span> is a contracting sequence of events, that is,
+<span class="math display">\[ A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots \]</span></p>
+<p>then
+<span class="math display">\[ P\left(\bigcap_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} P(A_n). \]</span></p>
+<p><strong>Hint:</strong> Write <span class="math inline">\(A_1 \cup A_2 \cup \cdots\)</span> as the union of a sequence of disjoint events: start with <span class="math inline">\(A_1\)</span>, then add a disjoint set to obtain <span class="math inline">\(A_1 \cup A_2\)</span>, then add a disjoint set again to obtain <span class="math inline">\(A_1 \cup A_2 \cup A_3\)</span>, and so on. Now that you have a sequence of disjoint sets, you can use the definition of a probability measure. To deal with the product <span class="math inline">\(A_1 \cap A_2 \cap \cdots\)</span>, write it as a union of some events with the aid of De Morgan’s law.</p>
+</div>
+<p><img src="fig/fig1.jpg" style="width:18cm" />
+<img src="fig/fig2.jpg" style="width:18cm" /></p>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-12" class="lemma"><strong>Lemma 2.1  (Borei-Cantelli) </strong></span>Let <span class="math inline">\(A_1, A_2, \ldots\)</span> be a sequence of events such that <span class="math inline">\(P(A_1) + P(A_2) + \cdots &lt; \infty\)</span>
+and let <span class="math inline">\(B_n = A_n \cup A_{n+1} \cup \cdots\)</span>. Then <span class="math inline">\(P(B_1 \cap B_2 \cap \cdots) = 0\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-13" class="exercise"><strong>Exercise 2.2  </strong></span>Prove the Borel-Cantelli lemma above.</p>
+<p><strong>Hint</strong>: <span class="math inline">\(B_1, B_2, \ldots\)</span> is a contracting sequence of events.</p>
+</div>
+<p><img src="fig/fig3.jpg" style="width:18cm" />
+<img src="fig/fig4.jpg" style="width:18cm" /></p>
+</div>
+<div id="random-variables" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Random Variables<a href="introduction.html#random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-14" class="definition"><strong>Definition 2.3  </strong></span>If <span class="math inline">\(\mathcal{F}\)</span> is a <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span>, then a function <span class="math inline">\(X : \Omega \to \mathbb{R}\)</span> is said to be <strong><span class="math inline">\(\mathcal{F}\)</span>-measurable</strong> if
+<span class="math display">\[\{\omega \in \Omega : X(\omega) \in B\}=X^{-1}(\omega)\]</span>
+for every Borel set <span class="math inline">\(B \in \mathcal{B}(\mathbb{R})\)</span>.<br />
+If <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> is a probability space, then such a function <span class="math inline">\(X\)</span> is called a <strong>random variable.</strong></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-15" class="definition"><strong>Definition 2.4  </strong></span>The <span class="math inline">\(\sigma\)</span>-field <span class="math inline">\(\sigma(X)\)</span> generated by a random variable <span class="math inline">\(X : \Omega \to \mathbb{R}\)</span> consists of all sets
+of the form <span class="math inline">\(\{X \in B\}\)</span>, where <span class="math inline">\(B\)</span> is a Borel set in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-16" class="definition"><strong>Definition 2.5  </strong></span>The <span class="math inline">\(\sigma\)</span>-field <span class="math inline">\(\sigma(\{X_i : i \in I\})\)</span> generated by a family <span class="math inline">\(\{X_i : i \in I\}\)</span> of random variables
+is defined to be the smallest <span class="math inline">\(\sigma\)</span>-field containing all events of the form <span class="math inline">\(\{X_i \in B\}\)</span>,
+where <span class="math inline">\(B\)</span> is a Borel set in <span class="math inline">\(\mathbb{R}\)</span> and <span class="math inline">\(i \in I\)</span>.</p>
+</div>
 
 </div>
 </div>
