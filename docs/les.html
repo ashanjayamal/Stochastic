@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Les | Stocastic</title>
+  <title>Chapter 5 Les | Stocastic</title>
   <meta name="description" content="<p>bla bla
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Les | Stocastic" />
+  <meta property="og:title" content="Chapter 5 Les | Stocastic" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>bla bla
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Les | Stocastic" />
+  <meta name="twitter:title" content="Chapter 5 Les | Stocastic" />
   
   <meta name="twitter:description" content="<p>bla bla
 The HTML output format for this example is bookdown::gitbook,
@@ -29,14 +29,14 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-07-30" />
+<meta name="date" content="2024-08-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="random-walk-to-brownier-motion..html"/>
+<link rel="prev" href="conditional-expectation.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -93,15 +93,21 @@ set in the _output.yml file.</p>" />
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#events-and-probability"><i class="fa fa-check"></i><b>2.1</b> Events and Probability</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#random-variables"><i class="fa fa-check"></i><b>2.2</b> Random Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#conditional-probability-and-independence"><i class="fa fa-check"></i><b>2.3</b> Conditional Probability and Independence</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="random-walk-to-brownier-motion..html"><a href="random-walk-to-brownier-motion..html"><i class="fa fa-check"></i><b>3</b> Random Walk to Brownier Motion.</a></li>
-<li class="chapter" data-level="4" data-path="les.html"><a href="les.html"><i class="fa fa-check"></i><b>4</b> Les</a>
+<li class="chapter" data-level="4" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>4</b> Conditional Expectation</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="les.html"><a href="les.html#integrals"><i class="fa fa-check"></i><b>4.1</b> Integrals</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="les.html"><a href="les.html#riemann-integral"><i class="fa fa-check"></i><b>4.1.1</b> Riemann Integral</a></li>
+<li class="chapter" data-level="4.1" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditioning-on-an-event"><i class="fa fa-check"></i><b>4.1</b> Conditioning on an Event</a></li>
+<li class="chapter" data-level="4.2" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditioning-on-a-discrete-random-variable"><i class="fa fa-check"></i><b>4.2</b> Conditioning on a Discrete Random Variable</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>4.2</b> Random Walks</a></li>
+<li class="chapter" data-level="5" data-path="les.html"><a href="les.html"><i class="fa fa-check"></i><b>5</b> Les</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="les.html"><a href="les.html#integrals"><i class="fa fa-check"></i><b>5.1</b> Integrals</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="les.html"><a href="les.html#riemann-integral"><i class="fa fa-check"></i><b>5.1.1</b> Riemann Integral</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>5.2</b> Random Walks</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
@@ -123,21 +129,21 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="les" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Les<a href="les.html#les" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="integrals" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Integrals<a href="les.html#integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="les" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Les<a href="les.html#les" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="integrals" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Integrals<a href="les.html#integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First we review the definitions of the Riemann integral in calculus and the Riemann–Stieltjes integral in advanced calculus.</p>
-<div id="riemann-integral" class="section level3 hasAnchor" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Riemann Integral<a href="les.html#riemann-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="riemann-integral" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Riemann Integral<a href="les.html#riemann-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(f\)</span> be an bounded function defined on a finite closed interval <span class="math inline">\([a, b]\)</span>. Then <span class="math inline">\(f\)</span> is called <em>Riemann integrable</em> if the following limit exists.
 <span class="math display">\[\begin{equation}
 x
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="random-walks" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Random Walks<a href="les.html#random-walks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="random-walks" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Random Walks<a href="les.html#random-walks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider a random walk starting at 0 with jumps <span class="math inline">\(h\)</span> and <span class="math inline">\(-h\)</span> equally likely at times <span class="math inline">\(\delta, 2\delta,...\)</span>, where <span class="math inline">\(h,\delta&gt;0\)</span> . More precisely, let <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> be a sequence of independent and identically distributed random variables with
 <span class="math display">\[P(X_j = h) = P(X_j = −h) = \frac{1}{2}\]</span></p>
 <p>Let <span class="math inline">\(Y_{\delta,h}(0) =0\)</span>
@@ -153,7 +159,7 @@ For <span class="math inline">\(t &gt; 0\)</span> define <span class="math inlin
           </div>
         </div>
       </div>
-<a href="random-walk-to-brownier-motion..html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conditional-expectation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -185,7 +191,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Les.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-Les.Rmd",
 "text": "Edit"
 },
 "history": {

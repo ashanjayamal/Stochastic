@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-07-30" />
+<meta name="date" content="2024-08-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="les.html"/>
+<link rel="next" href="conditional-expectation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -93,15 +93,21 @@ set in the _output.yml file.</p>" />
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#events-and-probability"><i class="fa fa-check"></i><b>2.1</b> Events and Probability</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#random-variables"><i class="fa fa-check"></i><b>2.2</b> Random Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#conditional-probability-and-independence"><i class="fa fa-check"></i><b>2.3</b> Conditional Probability and Independence</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="random-walk-to-brownier-motion..html"><a href="random-walk-to-brownier-motion..html"><i class="fa fa-check"></i><b>3</b> Random Walk to Brownier Motion.</a></li>
-<li class="chapter" data-level="4" data-path="les.html"><a href="les.html"><i class="fa fa-check"></i><b>4</b> Les</a>
+<li class="chapter" data-level="4" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>4</b> Conditional Expectation</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="les.html"><a href="les.html#integrals"><i class="fa fa-check"></i><b>4.1</b> Integrals</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="les.html"><a href="les.html#riemann-integral"><i class="fa fa-check"></i><b>4.1.1</b> Riemann Integral</a></li>
+<li class="chapter" data-level="4.1" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditioning-on-an-event"><i class="fa fa-check"></i><b>4.1</b> Conditioning on an Event</a></li>
+<li class="chapter" data-level="4.2" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditioning-on-a-discrete-random-variable"><i class="fa fa-check"></i><b>4.2</b> Conditioning on a Discrete Random Variable</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>4.2</b> Random Walks</a></li>
+<li class="chapter" data-level="5" data-path="les.html"><a href="les.html"><i class="fa fa-check"></i><b>5</b> Les</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="les.html"><a href="les.html#integrals"><i class="fa fa-check"></i><b>5.1</b> Integrals</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="les.html"><a href="les.html#riemann-integral"><i class="fa fa-check"></i><b>5.1.1</b> Riemann Integral</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>5.2</b> Random Walks</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
@@ -145,26 +151,26 @@ S_{(n+1)}&amp;:=S_n+\eta_{(n+1)}
 <p><strong>AIM</strong>: Develop a continuous time analogous.</p>
 <p><strong>Question</strong> What to use an contionus time replacement of the random walks?</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-17" class="definition"><strong>Definition 3.1  </strong></span>Let <span class="math inline">\(I\)</span> be index set <span class="math inline">\((I=\mathbb{N} \text{ or } I=\mathbb{R}^+)\)</span>. A collection of random varibels <span class="math inline">\((X_t)_{i\in I}\)</span> on <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> is called staocastic process.</p>
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Definition 3.1  </strong></span>Let <span class="math inline">\(I\)</span> be index set <span class="math inline">\((I=\mathbb{N} \text{ or } I=\mathbb{R}^+)\)</span>. A collection of random varibels <span class="math inline">\((X_t)_{i\in I}\)</span> on <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> is called staocastic process.</p>
 </div>
 <p>We need <span class="math inline">\(I\)</span> to be a just totally ordered set for convention of time. If it is not an totally ordered set it is not a stochastic process but a random field.</p>
 <p>Now we need a notation of a filtration.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-18" class="definition"><strong>Definition 3.2  </strong></span>Le <span class="math inline">\(\mathcal{F}_t\)</span> be non-decreasing sequnce of sub sigma algbers of <span class="math inline">\(\mathcal{F}\)</span> (i.e. <span class="math inline">\(\mathcal{F}_s\subseteq \mathcal{F}_t\)</span> for all <span class="math inline">\(s\geq t, s,t\in \in I\)</span>), then <span class="math inline">\((\mathcal{F}_t)_{t\in I}\)</span> is called a filtration.</p>
+<p><span id="def:unnamed-chunk-38" class="definition"><strong>Definition 3.2  </strong></span>Le <span class="math inline">\(\mathcal{F}_t\)</span> be non-decreasing sequnce of sub sigma algbers of <span class="math inline">\(\mathcal{F}\)</span> (i.e. <span class="math inline">\(\mathcal{F}_s\subseteq \mathcal{F}_t\)</span> for all <span class="math inline">\(s\geq t, s,t\in \in I\)</span>), then <span class="math inline">\((\mathcal{F}_t)_{t\in I}\)</span> is called a filtration.</p>
 </div>
 <p>Last we need the notation adaptness.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-19" class="definition"><strong>Definition 3.3  </strong></span>A stocticstic process <span class="math inline">\(X_t\)</span> is called adapted to filteration <span class="math inline">\((\mathcal{F}_t)_t\)</span> if <span class="math inline">\(X_t\in \mathcal{F}_t\)</span>. i.e: <span class="math inline">\(X_t\)</span> is measurable</p>
+<p><span id="def:unnamed-chunk-39" class="definition"><strong>Definition 3.3  </strong></span>A stocticstic process <span class="math inline">\(X_t\)</span> is called adapted to filteration <span class="math inline">\((\mathcal{F}_t)_t\)</span> if <span class="math inline">\(X_t\in \mathcal{F}_t\)</span>. i.e: <span class="math inline">\(X_t\)</span> is measurable</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-20" class="theorem"><strong>Theorem 3.1  (Central Limit Theorem) </strong></span>Let <span class="math inline">\(Y_{n_i}:\Omega \to \mathbb{R}^d\)</span> (be collection of random varibles), <span class="math inline">\(1\leq i \leq n &lt; \infty\)</span> be identical distributed and square intergable random varaible on <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> such that <span class="math inline">\(Y_{n_1},Y_{n_2},...,Y_{n_n}\)</span> are independent for all <span class="math inline">\(n\in \mathbb{N}\)</span>. Then
+<p><span id="thm:unnamed-chunk-40" class="theorem"><strong>Theorem 3.1  (Central Limit Theorem) </strong></span>Let <span class="math inline">\(Y_{n_i}:\Omega \to \mathbb{R}^d\)</span> (be collection of random varibles), <span class="math inline">\(1\leq i \leq n &lt; \infty\)</span> be identical distributed and square intergable random varaible on <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> such that <span class="math inline">\(Y_{n_1},Y_{n_2},...,Y_{n_n}\)</span> are independent for all <span class="math inline">\(n\in \mathbb{N}\)</span>. Then
 <span class="math display">\[\left(\frac{1}{\sqrt{n}}\sum_{i=1}^n Y_{n_i}-\mathbb{E}[Y_i] \right)
   \xrightarrow{\mathcal{D}} N(0,C) \text{ as } n \to \infty\]</span>,
 where<span class="math inline">\(N(0,C)\)</span> is multivarible noremal distribution with covarice matrix <span class="math display">\[Y_{k,l}=Cov[Y^{(k)}_{n_i} -Y^{(l)}_{n_i}]\]</span></p>
 <p>and<span class="math inline">\(\xrightarrow{\mathcal{D}}\)</span> means “distribution is convergent” to ```</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span>Omitted</p>
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>Omitted</p>
 </div>
 <p>We consider the random walk
 <span class="math display">\[S_n=\sum_{i=1}^n\eta_i\]</span>
@@ -187,7 +193,7 @@ Here <span class="math inline">\(here c_m\)</span> is rescaling constant. It is 
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="les.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conditional-expectation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
