@@ -632,13 +632,13 @@ E(\xi \mid B) = \frac{1}{P(B)} \int_B \xi \, dP.
 \end{definition}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-43}{}\label{exm:unnamed-chunk-43}Three coins, 10p, 20p, and 50p are tossed. The values of those coins that land heads up are added to work out the total amount \(\xi\). What is the expected total amount \(\xi\) given that two coins have landed heads up?
+\protect\hypertarget{exm:eg21}{}\label{exm:eg21}Three coins, 10p, 20p, and 50p are tossed. The values of those coins that land heads up are added to work out the total amount \(\xi\). What is the expected total amount \(\xi\) given that two coins have landed heads up?
 \end{example}
 
 \includegraphics[width=18cm,height=\textheight]{fig/fig eg2.1.png}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-44}{}\label{exr:unnamed-chunk-44}Show that \(E(\xi \mid D) = E(\xi)\).
+\protect\hypertarget{exr:unnamed-chunk-43}{}\label{exr:unnamed-chunk-43}Show that \(E(\xi \mid D) = E(\xi)\).
 
 \textbf{Hint}: The definition of \(E(\xi)\) involves an integral and so does the definition of \(E(\xi \mid D)\). How are these integrals related?
 \end{exercise}
@@ -646,7 +646,7 @@ E(\xi \mid B) = \frac{1}{P(B)} \int_B \xi \, dP.
 \includegraphics[width=18cm,height=\textheight]{fig/fig ex2.1.png}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-45}{}\label{exr:unnamed-chunk-45}Show that if
+\protect\hypertarget{exr:unnamed-chunk-44}{}\label{exr:unnamed-chunk-44}Show that if
 \[
 \mathbf{1}_A(\omega) = 
 \begin{cases} 
@@ -678,12 +678,20 @@ E(\xi \mid \{\eta = y_1\}), E(\xi \mid \{\eta = y_2\}), \ldots
 A convenient way of doing this is to construct a new discrete random variable constant and equal to \(E(\xi \mid \{\eta = y_n\})\) on each of the sets \(\{\eta = y_n\}\). This leads us to the next definition.
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-46}{}\label{def:unnamed-chunk-46}Let \(\xi\) be an integrable random variable and let \(\eta\) be a discrete random variable as above. Then the conditional expectation of \(\xi\) given \(\eta\) is defined to be a random variable \(E(\xi \mid \eta)\) such that
+\protect\hypertarget{def:unnamed-chunk-45}{}\label{def:unnamed-chunk-45}Let \(\xi\) be an integrable random variable and let \(\eta\) be a discrete random variable as above. Then the conditional expectation of \(\xi\) given \(\eta\) is defined to be a random variable \(E(\xi \mid \eta)\) such that
 \[
 E(\xi \mid \eta)(\omega) = E(\xi \mid \{\eta = y_n\}) \text{ if } \eta(\omega) = y_n
 \]
 for any \(n = 1, 2, \ldots\).
 \end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-46}{}\label{exm:unnamed-chunk-46}Three coins, 10p, 20p, and 50p are tossed as in Example \ref{exm:eg21}. What is the conditional expectation \(E(\xi \mid \eta)\) of the total amount \(\xi\) shown by the three coins given the total amount \(\eta\) shown by the 10p and 20p coins only?
+\end{example}
+
+\includegraphics[width=18cm,height=\textheight]{fig/fig eg2.2-1.png}
+\includegraphics[width=18cm,height=\textheight]{fig/fig eg2.2-2.png}
+\includegraphics[width=18cm,height=\textheight]{fig/fig eg2.2-3.png}
 
 \chapter{Les}\label{les}
 
