@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2024-08-03" />
+<meta name="date" content="2024-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -110,6 +110,7 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="les.html"><a href="les.html#random-walks"><i class="fa fa-check"></i><b>5.2</b> Random Walks</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="book.html"><a href="book.html"><i class="fa fa-check"></i><b>6</b> Book</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
 
@@ -137,7 +138,7 @@ set in the _output.yml file.</p>" />
 <p>The first and simplest case to consider is that of the conditional expectation
 <span class="math inline">\(\mathbf{E} (\xi|B)\)</span> of a random variable <span class="math inline">\(\xi\)</span> given an event <span class="math inline">\(B\)</span>.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 4.1  </strong></span>For any integrable random variable <span class="math inline">\(\xi\)</span> and any event <span class="math inline">\(B \in \mathcal{F}\)</span> such that <span class="math inline">\(P(B) \neq 0\)</span>, the conditional expectation of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(B\)</span> is defined by
+<p><span id="def:unnamed-chunk-42" class="definition"><strong>Definition 4.1  </strong></span>For any integrable random variable <span class="math inline">\(\xi\)</span> and any event <span class="math inline">\(B \in \mathcal{F}\)</span> such that <span class="math inline">\(P(B) \neq 0\)</span>, the conditional expectation of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(B\)</span> is defined by
 <span class="math display">\[
 E(\xi \mid B) = \frac{1}{P(B)} \int_B \xi \, dP.
 \]</span></p>
@@ -147,12 +148,12 @@ E(\xi \mid B) = \frac{1}{P(B)} \int_B \xi \, dP.
 </div>
 <p><img src="fig/fig%20eg2.1.png" style="width:18cm" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-2" class="exercise"><strong>Exercise 4.1  </strong></span>Show that <span class="math inline">\(E(\xi \mid D) = E(\xi)\)</span>.</p>
+<p><span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 4.1  </strong></span>Show that <span class="math inline">\(E(\xi \mid D) = E(\xi)\)</span>.</p>
 <p><strong>Hint</strong>: The definition of <span class="math inline">\(E(\xi)\)</span> involves an integral and so does the definition of <span class="math inline">\(E(\xi \mid D)\)</span>. How are these integrals related?</p>
 </div>
 <p><img src="fig/fig%20ex2.1.png" style="width:18cm" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 4.2  </strong></span>Show that if
+<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 4.2  </strong></span>Show that if
 <span class="math display">\[
 \mathbf{1}_A(\omega) =
 \begin{cases}
@@ -181,20 +182,20 @@ E(\xi \mid \{\eta = y_1\}), E(\xi \mid \{\eta = y_2\}), \ldots
 \]</span>
 A convenient way of doing this is to construct a new discrete random variable constant and equal to <span class="math inline">\(E(\xi \mid \{\eta = y_n\})\)</span> on each of the sets <span class="math inline">\(\{\eta = y_n\}\)</span>. This leads us to the next definition.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-4" class="definition"><strong>Definition 4.2  </strong></span>Let <span class="math inline">\(\xi\)</span> be an integrable random variable and let <span class="math inline">\(\eta\)</span> be a discrete random variable as above. Then the conditional expectation of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(\eta\)</span> is defined to be a random variable <span class="math inline">\(E(\xi \mid \eta)\)</span> such that
+<p><span id="def:unnamed-chunk-45" class="definition"><strong>Definition 4.2  </strong></span>Let <span class="math inline">\(\xi\)</span> be an integrable random variable and let <span class="math inline">\(\eta\)</span> be a discrete random variable as above. Then the conditional expectation of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(\eta\)</span> is defined to be a random variable <span class="math inline">\(E(\xi \mid \eta)\)</span> such that
 <span class="math display">\[
 E(\xi \mid \eta)(\omega) = E(\xi \mid \{\eta = y_n\}) \text{ if } \eta(\omega) = y_n
 \]</span>
 for any <span class="math inline">\(n = 1, 2, \ldots\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 4.2  </strong></span>Three coins, 10p, 20p, and 50p are tossed as in Example <a href="conditional-expectation.html#exm:eg21">4.1</a>. What is the conditional expectation <span class="math inline">\(E(\xi \mid \eta)\)</span> of the total amount <span class="math inline">\(\xi\)</span> shown by the three coins given the total amount <span class="math inline">\(\eta\)</span> shown by the 10p and 20p coins only?</p>
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 4.2  </strong></span>Three coins, 10p, 20p, and 50p are tossed as in Example <a href="conditional-expectation.html#exm:eg21">4.1</a>. What is the conditional expectation <span class="math inline">\(E(\xi \mid \eta)\)</span> of the total amount <span class="math inline">\(\xi\)</span> shown by the three coins given the total amount <span class="math inline">\(\eta\)</span> shown by the 10p and 20p coins only?</p>
 </div>
 <p><img src="fig/fig%20eg2.2-1.png" style="width:18cm" />
 <img src="fig/fig%20eg2.2-2.png" style="width:18cm" />
 <img src="fig/fig%20eg2.2-3.png" style="width:18cm" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 4.3  </strong></span>Take <span class="math inline">\(\Omega = [0, 1]\)</span> with the <span class="math inline">\(\sigma\)</span>-field of Borel sets and <span class="math inline">\(P\)</span> the Lebesgue measure on <span class="math inline">\((0, 1]\)</span>. We shall find <span class="math inline">\(E(\xi \mid \eta)\)</span> for
+<p><span id="exm:unnamed-chunk-47" class="example"><strong>Example 4.3  </strong></span>Take <span class="math inline">\(\Omega = [0, 1]\)</span> with the <span class="math inline">\(\sigma\)</span>-field of Borel sets and <span class="math inline">\(P\)</span> the Lebesgue measure on <span class="math inline">\((0, 1]\)</span>. We shall find <span class="math inline">\(E(\xi \mid \eta)\)</span> for
 <span class="math display">\[
 \xi(x)=2x^2,~~~
 \eta(x) =
@@ -208,14 +209,14 @@ for any <span class="math inline">\(n = 1, 2, \ldots\)</span>.</p>
 <p><img src="fig/fig%20eg2.3-1.png" style="width:18cm" />
 <img src="fig/fig%20eg2.3-2.png" style="width:18cm" /></p>
 <p>The graph of <span class="math inline">\(E(\xi|\eta)\)</span> is shown in following figure together with those of <span class="math inline">\(\xi\)</span> and <span class="math inline">\(\eta\)</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 4.3  </strong></span>Show that if <span class="math inline">\(\eta\)</span> is a constant function, then <span class="math inline">\(E(\xi \mid \eta)\)</span> is constant and equal to <span class="math inline">\(E(\xi)\)</span>.</p>
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 4.3  </strong></span>Show that if <span class="math inline">\(\eta\)</span> is a constant function, then <span class="math inline">\(E(\xi \mid \eta)\)</span> is constant and equal to <span class="math inline">\(E(\xi)\)</span>.</p>
 <p><strong>Hint</strong>: The event <span class="math inline">\(\{\eta = c\}\)</span> must be <span class="math inline">\(\emptyset\)</span> or <span class="math inline">\(\Omega\)</span> for any <span class="math inline">\(c \in \mathbb{R}\)</span>.</p>
 </div>
 <p><img src="fig/fig%20ex2.3.png" style="width:18cm" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 4.4  </strong></span>Show that
+<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 4.4  </strong></span>Show that
 <span class="math display">\[
 E(\mathbf{1}_A \mid B)(\omega) =
 \begin{cases}
@@ -228,7 +229,7 @@ for any <span class="math inline">\(B\)</span> such that <span class="math inlin
 </div>
 <p><img src="fig/fig%20ex2.4.png" style="width:18cm" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-10" class="exercise"><strong>Exercise 4.5  </strong></span>Assuming that <span class="math inline">\(\eta\)</span> is a discrete random variable, show that
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 4.5  </strong></span>Assuming that <span class="math inline">\(\eta\)</span> is a discrete random variable, show that
 <span class="math display">\[
 E(E(\xi \mid \eta)) = E(\xi).
 \]</span></p>
@@ -239,7 +240,7 @@ E(E(\xi \mid \eta)) = E(\xi).
 for any event <span class="math inline">\(B\)</span> on which <span class="math inline">\(\eta\)</span> is constant. The desired equality can be obtained by covering <span class="math inline">\(\Omega\)</span> by countably many disjoint events of this kind.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-11" class="proposition"><strong>Proposition 4.1  </strong></span>If <span class="math inline">\(\xi\)</span> is an integrable random variable and <span class="math inline">\(\eta\)</span> is a discrete random variable, then:</p>
+<p><span id="prp:unnamed-chunk-52" class="proposition"><strong>Proposition 4.1  </strong></span>If <span class="math inline">\(\xi\)</span> is an integrable random variable and <span class="math inline">\(\eta\)</span> is a discrete random variable, then:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(E(\xi \mid \eta)\)</span> is <span class="math inline">\(\sigma(\eta)\)</span>-measurable;</li>
 <li>For any <span class="math inline">\(A \in \sigma(\eta)\)</span>,
@@ -249,7 +250,7 @@ for any event <span class="math inline">\(B\)</span> on which <span class="math 
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-1" class="proof"><em>Proof</em>. </span>Suppose that <span class="math inline">\(\eta\)</span> has pairwise distinct values <span class="math inline">\(y_1, y_2, \ldots\)</span>. Then the events
+<p><span id="unlabeled-div-5" class="proof"><em>Proof</em>. </span>Suppose that <span class="math inline">\(\eta\)</span> has pairwise distinct values <span class="math inline">\(y_1, y_2, \ldots\)</span>. Then the events
 <span class="math display">\[
 \{\eta = y_1\}, \{\eta = y_2\}, \ldots
 \]</span>
@@ -268,7 +269,7 @@ as required.</p>
 <div id="conditioning-on-an-arbitrary-random-variable" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Conditioning on an Arbitrary Random Variable<a href="conditional-expectation.html#conditioning-on-an-arbitrary-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-13" class="definition"><strong>Definition 4.3  </strong></span>Let <span class="math inline">\(\xi\)</span> be an integrable random variable and let <span class="math inline">\(\eta\)</span> be an arbitrary random variable. Then the <strong>conditional expectation</strong> of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(\eta\)</span> is defined to be a random variable <span class="math inline">\(E(\xi \mid \eta)\)</span> such that:</p>
+<p><span id="def:unnamed-chunk-54" class="definition"><strong>Definition 4.3  </strong></span>Let <span class="math inline">\(\xi\)</span> be an integrable random variable and let <span class="math inline">\(\eta\)</span> be an arbitrary random variable. Then the <strong>conditional expectation</strong> of <span class="math inline">\(\xi\)</span> given <span class="math inline">\(\eta\)</span> is defined to be a random variable <span class="math inline">\(E(\xi \mid \eta)\)</span> such that:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(E(\xi \mid \eta)\)</span> is <span class="math inline">\(\sigma(\eta)\)</span>-measurable;</li>
 <li>For any <span class="math inline">\(A \in \sigma(\eta)\)</span>,
@@ -278,7 +279,7 @@ as required.</p>
 </ol>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-2" class="remark"><em>Remark</em>. </span>We can also define the <strong>conditional probability</strong> of an event <span class="math inline">\(A \in \mathcal{F}\)</span> given () by
+<p><span id="unlabeled-div-6" class="remark"><em>Remark</em>. </span>We can also define the <strong>conditional probability</strong> of an event <span class="math inline">\(A \in \mathcal{F}\)</span> given () by
 <span class="math display">\[P(A|\eta)=E(1_A|\eta)\]</span>
 here <span class="math inline">\(l_A\)</span> is the indicator function of A.</p>
 </div>
@@ -287,7 +288,7 @@ if <span class="math display">\[\xi=\xi&#39; \text{ almost sure  , then } E (\xi
 An event <span class="math inline">\(A\)</span> is said to occur almost surely (a.s.) whenever <span class="math inline">\(P(A) = 1\)</span>.
 The existence of <span class="math inline">\(E (\xi|\eta)\)</span> will be discussed later in this chapter.</p>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-15" class="lemma"><strong>Lemma 4.1  </strong></span>Let <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> be a probability space and let <span class="math inline">\(\mathcal{G}\)</span> be a <span class="math inline">\(\sigma\)</span>-field contained in <span class="math inline">\(\mathcal{F}\)</span>. If <span class="math inline">\(\xi\)</span> is a <span class="math inline">\(\mathcal{G}\)</span>-measurable random variable and for any <span class="math inline">\(B \in \mathcal{G}\)</span>,
+<p><span id="lem:unnamed-chunk-56" class="lemma"><strong>Lemma 4.1  </strong></span>Let <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> be a probability space and let <span class="math inline">\(\mathcal{G}\)</span> be a <span class="math inline">\(\sigma\)</span>-field contained in <span class="math inline">\(\mathcal{F}\)</span>. If <span class="math inline">\(\xi\)</span> is a <span class="math inline">\(\mathcal{G}\)</span>-measurable random variable and for any <span class="math inline">\(B \in \mathcal{G}\)</span>,
 <span class="math display">\[
 \int_B \xi \, dP = 0,
 \]</span>
