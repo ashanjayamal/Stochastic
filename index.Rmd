@@ -1,0 +1,85 @@
+--- 
+title: "Stocastic"
+author: "Ashan Jayamal"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+url: your book url like https://ashanjayamal.github.io/Stochastic/
+description: |
+  bla bla
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Premilaries
+
+```{definition}
+Consider a set \(X\).
+An \(\sigma\)-algebra \(\mathcal{F}\) of subsets of \(X\) is a collection \(\mathcal{F}\) of subsets of \(X\) satisfying the following conditions:
+  
+- \(\emptyset \in \mathcal{F}\)
+- If \(B \in \mathcal{F}\), then its complement \(B^c\) is also in \(F\)
+- If \(B_1, B_2, \ldots\) is a countable collection of sets in \(\mathcal{F}\), then their union \(\bigcup_{n=1}^\infty B_n\) is also in \(\mathcal{F}\).
+```
+
+## Brownian Motion
+
+Let \((\Omega, F, P)\) be a probability space. A stochastic process is a measurable function \(X(t, \omega)\) defined on the product space \([0,\infty) \times \Omega\). In particular:
+
+- For each \(t\), \(X(t, \cdot)\) is a random variable.
+- For each \(\omega\), \(X(\cdot, \omega)\) is a measurable function (called a sample path).
+
+For convenience, the random variable \(X(t, \cdot)\) will be written as \(X(t)\) or \(X_t\).
+Thus, a stochastic process \(X(t, \omega)\) can also be expressed as \(X(t)(\omega)\) or simply as \(X(t)\) or \(X_t\).
+
+## Definition of Brownian Motion
+
+
+```{definition,Brownian_Motaion}
+ A stochastic process \(B(t, \omega)\) is called a Brownian motion if it satisfies the following conditions:
+  
+1. \(P(\{\omega : B(0, \omega) = 0\}) = 1\).
+2. For any \(0 \leq s < t\), the random variable \(B(t) - B(s)\) is normally distributed with mean 0 and variance \(t - s\), i.e., for any \(a < b\),
+\[
+P(a \leq B(t) - B(s) \leq b) = \frac{1}{\sqrt{2\pi(t - s)}} \int_a^b e^{-x^2/2(t - s)} \, dx.
+\]
+3. \(B(t, \omega)\) has independent increments, i.e., for any \(0 \leq t_1 < t_2 < \ldots < t_n\), the random variables
+\[B(t_1), B(t_2) - B(t_1), \ldots, B(t_n) - B(t_{n-1})\]
+are independent.
+4. Almost all sample paths of \(B(t, \omega)\) are continuous functions, i.e.,
+\[P(\{\omega : B(\cdot, \omega) \text{ is continuous}\}) = 1\].
+
+```
+
+## Simple Properties of Brownian Motion
+
+Let\(B(t)\) be a fixed Brownian motion. We give below some simple properties that follow directly from the definition of Brownian motion.
+
+```{proposition}
+For any \(t > 0\), \(B(t)\) is normally distributed with mean 0 and variance \(t\). For any \(s, t \geq 0\), we have \(\mathbb{E}[B(s)B(t)] = \min\{s, t\}\).
+```
+
+```{remark}
+Regarding Definition \@ref(def:Brownian_Motaion), it can be proved that condition (2) and E[B(s)B(t)] = min{s, t} imply condition (3).
+```
+
+```{proof}
+By condition (1), we have \(B(t) = B(t)−B(0)\) and so the first assertion follows from condition (2). With out loss of generlity, assume that $s<t$.
+\[\mathbb{E}[B(s)B(t)] = \mathbb{E}[B(s)(B(t) - B(s)) + B(s)^2]= 0 + s = s\]
+which is equal to \(\min\{s, t\}\).
+```
+
+```{proposition,name='Translation Invariance'}
+For a fixed \(t_0 \geq 0\), the stochastic process \(B(t) = B(t + t_0) - B(t_0)\) is also a Brownian motion.
+```
+
+```{proposition,name='Scaling invariance'}
+For any real number \(\lambda > 0\), the stochastic process
+\(B(t) = \frac{B(\lambda t)}{\sqrt{\lambda}}\)
+is also a Brownian motion.
+```
+
+## Wiener Integral

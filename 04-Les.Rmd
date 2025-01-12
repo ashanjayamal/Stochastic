@@ -1,0 +1,24 @@
+# Les
+## Integrals
+
+First we review the definitions of the Riemann integral in calculus and the Riemann–Stieltjes integral in advanced calculus.
+
+### Riemann Integral
+
+Let $f$ be an bounded function defined on a finite closed interval $[a, b]$. Then $f$ is called _Riemann integrable_ if the following limit exists.
+\begin{equation}
+x
+\end{equation}
+
+
+## Random Walks
+
+Consider a random walk starting at 0 with jumps \(h\) and \(-h\) equally likely at times \(\delta, 2\delta,...\), where \(h,\delta>0\) . More precisely, let \(\{X_n\}_{n=1}^\infty\) be a sequence of independent and identically distributed random variables with 
+\[P(X_j = h) = P(X_j = −h) = \frac{1}{2}\]
+
+
+Let \(Y_{\delta,h}(0) =0\)
+\[Y_{\delta,h}(n\delta) = X_1 + X_2 + \ldots + X_n\]
+For \( t > 0\)  define \(Y_{\delta,h}(t)\)  by linearization:
+(i.e: For \( n\delta < t < (n + 1)\delta\), define 
+\[Y_{\delta,h}(t) = \frac{(n + 1)\delta - t}{\delta} Y_{\delta,h}(n\delta) + \frac{t - n\delta}{\delta} Y_{\delta,h}((n + 1)\delta).\]
