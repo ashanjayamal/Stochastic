@@ -80,6 +80,8 @@ def:unnamed-chunk-88
 def:unnamed-chunk-89
 thm:unnamed-chunk-90
 exm:unnamed-chunk-92
+thm:unnamed-chunk-94
+cor:unnamed-chunk-95
 premilaries
 brownian-motion
 definition-of-brownian-motion
@@ -105,6 +107,7 @@ a-class-of-problems
 examples
 measure-theory-a-crash-course.
 write-this-agian.
+write-agian
 exm:unnamed-chunk-1
 def:unnamed-chunk-2
 prp:unnamed-chunk-3
@@ -129,3 +132,5 @@ def:unnamed-chunk-31
 def:unnamed-chunk-33
 thm:unnamed-chunk-34
 exm:unnamed-chunk-36
+thm:unnamed-chunk-38
+cor:unnamed-chunk-39

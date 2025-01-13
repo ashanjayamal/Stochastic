@@ -480,10 +480,70 @@ Now, let \( \mathcal{C}_0 \) denote the set of continuous functions on \( X \) a
 \begin{align}
 \int_X g d\mu_n 
 & = \int_X gd\left(\frac{1}{n}\sum_{k=0}^{n-1} \delta_f^k(x)\right)\\
-& = \frac{1}{n}\sum_{k=0}^{n-1} \delta_f^k(x)\\
+& = \frac{1}{n}\sum_{k=0}^{n-1} \int_X g d\left(\delta_f^k(x)\right)\\
+& = \frac{1}{n}\sum_{k=0}^{n-1} \int_X g \left(f^k(x)\right)\\
+|\int_X g d\mu_n | & \leq \frac{1}{n}\sum_{k=0}^{n-1} ||g||_\infty=1||g||_\infty\\
+|\int_X g d\mu_n | & \leq 1
 \end{align}
 \]
 
+Recall **Banach–Alaoglu theorem**: \
+The closed unit ball of the dual space of a normed vector space is compact in the weak topology.
 
 
 ```
+
+## Write agian
+
+```{theorem ,name='Poincaré recurrence theorem'}
+Let $f$ be the probability measure prserving map on $(X,\mathcal{A},\mu)$. If $A$ is measurable then $\mu$ almost everywhere $x\in A,\exists n\in \mathbb{N}$ such that $f^n(x)\in A$.
+```
+
+```{corollary}
+Consequently, for $\mu$-almost everywhere, $x\in A$, there are infinitely many $k$ such that $f^k(x)\in A$.
+```
+
+```{remark}
+1. \[
+\text{Recuurance of an orbit} \neq 
+\text{dense orbit}\]
+**Example**: $R_\alpha, \alpha \in \mathbb{Q}$ then no dense orbit exists.
+1. If $\mu$ is not finite then this therom is not true. \
+**Example**Consider $f(x)=x+1$, Lebegue measure is preserved but it goes to infinity $f^n$.
+1. There are some applications of this therom
+```
+
+
+```{proof}
+Let $A\subseteq X$ is measuarable and $B:=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in \mathbb{N}\}$, B contains all points never returns $A$.
+\[
+  \begin{align}
+B&=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in mathbb{N}\}\\
+&= A\setminus \cup_{n=1}^\infty f^{-n}(A).
+  \end{align}
+\]
+Since $f$ is preseves $\mu$,
+\[\mu (f^{-k}(B))=\mu(B) ~~\forall k\]
+
+**Claim**: \(f^{-m}\cap f^{-n} \neq \emptyset\).\
+Without loss of generality assume that $m>n$.
+Assume the contray. Then there exists  x \in f^{-n} \cap f^{-m}.
+\[
+\begin{align}
+  f^m(x) \in B & \subseteq A\\
+  f^n(x) \in B & \subseteq A\\
+  f^{m-n}(f^n(x))=f^m \in B & \subseteq A
+\end{align}
+\]
+ Now we found a point that returns back to $A$. This is contraidict the choice of $B$.
+Therefore, \(f^{-m}\cap f^{-n} \neq \emptyset$.
+
+\[
+1=\mu(X)\geq \mu (\cup_{k=0}^\infty f^{-k}(B))  =
+ (\cup_{k=0}^\infty \mu(f^{-k}(B))
+ = (\cup_{k=0}^\infty \mu(B))\\
+\]
+ Therefore, \(\mu(B)=0\)
+```
+
+

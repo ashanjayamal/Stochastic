@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2025-01-12" />
+<meta name="date" content="2025-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -118,6 +118,7 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="7.3" data-path="stochastic-and-dynamics.html"><a href="stochastic-and-dynamics.html#examples"><i class="fa fa-check"></i><b>7.3</b> Examples</a></li>
 <li class="chapter" data-level="7.4" data-path="stochastic-and-dynamics.html"><a href="stochastic-and-dynamics.html#measure-theory-a-crash-course."><i class="fa fa-check"></i><b>7.4</b> Measure Theory A crash Course.</a></li>
 <li class="chapter" data-level="7.5" data-path="stochastic-and-dynamics.html"><a href="stochastic-and-dynamics.html#write-this-agian."><i class="fa fa-check"></i><b>7.5</b> Write this agian.</a></li>
+<li class="chapter" data-level="7.6" data-path="stochastic-and-dynamics.html"><a href="stochastic-and-dynamics.html#write-agian"><i class="fa fa-check"></i><b>7.6</b> Write agian</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Ashan Jayamal</a></li>
@@ -561,9 +562,64 @@ where <span class="math inline">\(\delta_x\)</span> is the Dirac measure defined
 \begin{align}
 \int_X g d\mu_n
 &amp; = \int_X gd\left(\frac{1}{n}\sum_{k=0}^{n-1} \delta_f^k(x)\right)\\
-&amp; = \frac{1}{n}\sum_{k=0}^{n-1} \delta_f^k(x)\\
+&amp; = \frac{1}{n}\sum_{k=0}^{n-1} \int_X g d\left(\delta_f^k(x)\right)\\
+&amp; = \frac{1}{n}\sum_{k=0}^{n-1} \int_X g \left(f^k(x)\right)\\
+|\int_X g d\mu_n | &amp; \leq \frac{1}{n}\sum_{k=0}^{n-1} ||g||_\infty=1||g||_\infty\\
+|\int_X g d\mu_n | &amp; \leq 1
 \end{align}
 \]</span></p>
+<p>Recall <strong>Banach–Alaoglu theorem</strong>:<br />
+The closed unit ball of the dual space of a normed vector space is compact in the weak topology.</p>
+</div>
+</div>
+<div id="write-agian" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Write agian<a href="stochastic-and-dynamics.html#write-agian" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-38" class="theorem"><strong>Theorem 7.3  (Poincaré recurrence theorem) </strong></span>Let <span class="math inline">\(f\)</span> be the probability measure prserving map on <span class="math inline">\((X,\mathcal{A},\mu)\)</span>. If <span class="math inline">\(A\)</span> is measurable then <span class="math inline">\(\mu\)</span> almost everywhere <span class="math inline">\(x\in A,\exists n\in \mathbb{N}\)</span> such that <span class="math inline">\(f^n(x)\in A\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-39" class="corollary"><strong>Corollary 7.1  </strong></span>Consequently, for <span class="math inline">\(\mu\)</span>-almost everywhere, <span class="math inline">\(x\in A\)</span>, there are infinitely many <span class="math inline">\(k\)</span> such that <span class="math inline">\(f^k(x)\in A\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-7" class="remark"><em>Remark</em>. </span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math display">\[
+\text{Recuurance of an orbit} \neq
+\text{dense orbit}\]</span>
+<strong>Example</strong>: <span class="math inline">\(R_\alpha, \alpha \in \mathbb{Q}\)</span> then no dense orbit exists.</li>
+<li>If <span class="math inline">\(\mu\)</span> is not finite then this therom is not true.<br />
+<strong>Example</strong>Consider <span class="math inline">\(f(x)=x+1\)</span>, Lebegue measure is preserved but it goes to infinity <span class="math inline">\(f^n\)</span>.</li>
+<li>There are some applications of this therom</li>
+</ol>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(A\subseteq X\)</span> is measuarable and <span class="math inline">\(B:=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in \mathbb{N}\}\)</span>, B contains all points never returns <span class="math inline">\(A\)</span>.
+<span class="math display">\[
+  \begin{align}
+B&amp;=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in mathbb{N}\}\\
+&amp;= A\setminus \cup_{n=1}^\infty f^{-n}(A).
+  \end{align}
+\]</span>
+Since <span class="math inline">\(f\)</span> is preseves <span class="math inline">\(\mu\)</span>,
+<span class="math display">\[\mu (f^{-k}(B))=\mu(B) ~~\forall k\]</span></p>
+<p><strong>Claim</strong>: <span class="math inline">\(f^{-m}\cap f^{-n} \neq \emptyset\)</span>.<br />
+Without loss of generality assume that <span class="math inline">\(m&gt;n\)</span>.
+Assume the contray. Then there exists x f^{-n} f^{-m}.
+<span class="math display">\[
+\begin{align}
+  f^m(x) \in B &amp; \subseteq A\\
+  f^n(x) \in B &amp; \subseteq A\\
+  f^{m-n}(f^n(x))=f^m \in B &amp; \subseteq A
+\end{align}
+\]</span>
+Now we found a point that returns back to <span class="math inline">\(A\)</span>. This is contraidict the choice of <span class="math inline">\(B\)</span>.
+Therefore, (f<sup>{-m}f</sup>{-n} $.</p>
+<p><span class="math display">\[
+1=\mu(X)\geq \mu (\cup_{k=0}^\infty f^{-k}(B))  =
+(\cup_{k=0}^\infty \mu(f^{-k}(B))
+= (\cup_{k=0}^\infty \mu(B))\\
+\]</span>
+Therefore, <span class="math inline">\(\mu(B)=0\)</span></p>
 </div>
 
 </div>
