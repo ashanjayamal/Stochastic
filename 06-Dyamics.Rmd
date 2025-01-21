@@ -50,7 +50,9 @@ $$
 $$
 ```
 
+<center>
 ![](fig\dyamic_sys\fig1.png){width=50%}
+</center>
 
 ```{definition}
 - The orbit of a periodic point is called a **periodic orbit**.
@@ -59,7 +61,10 @@ $$
 In other words, there exists $\bar{N}$ such that $f^{\bar{N}}(f^{n_0}(x)) = f^{n_0}(x)$.
 ```
 
+<center>
 ![](fig\dyamic_sys\fig2.png){width=50%}
+</center>
+
 
 ```{exercise}
 Show that if $f$ is invertible, then all eventually periodic points are periodic.
@@ -103,8 +108,9 @@ Let \( (X, f), (Y, g) \) be two discrete dynamical systems. \( \pi: Y \to X \) i
 
 ```
 
+<center>
 ![](fig\dyamic_sys\fig3.png){width=30%}
-
+</center>
 
 ```{definition}
 If $\pi$ is invertible then $\pi$ is called **conjugacy**.
@@ -496,7 +502,9 @@ The closed unit ball of the dual space of a normed vector space is compact in th
 ## Write agian
 
 ```{theorem ,name='Poincaré recurrence theorem'}
-Let $f$ be the probability measure prserving map on $(X,\mathcal{A},\mu)$. If $A$ is measurable then $\mu$ almost everywhere $x\in A,\exists n\in \mathbb{N}$ such that $f^n(x)\in A$.
+
+Let \( f: X \to X \) be a measure-preserving map on a probability space \((X, \mathcal{A}, \mu)\), where \(\mu(X) = 1\). If \( A \in \mathcal{A} \) satisfies \(\mu(A) > 0\), then for \(\mu\)-almost every \( x \in A \), there exists \( n \in \mathbb{N} \) such that \( f^n(x) \in A \).
+
 ```
 
 ```{corollary}
@@ -518,7 +526,7 @@ Consequently, for $\mu$-almost everywhere, $x\in A$, there are infinitely many $
 Let $A\subseteq X$ is measuarable and $B:=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in \mathbb{N}\}$, B contains all points never returns $A$.
 \[
   \begin{align}
-B&=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in mathbb{N}\}\\
+B&=\{x\in A\mid f^n(x)\in A, \text{ for all } n \in \mathbb{N}\}\\
 &= A\setminus \cup_{n=1}^\infty f^{-n}(A).
   \end{align}
 \]
@@ -546,4 +554,311 @@ Therefore, \(f^{-m}\cap f^{-n} \neq \emptyset$.
  Therefore, \(\mu(B)=0\)
 ```
 
+## Egodicity and Mixing
 
+
+**Boltzmann Ergodicity Hypothesis **
+For certain invariant (finite) measures $\mu$, many functions $g : X \to \mathbb{R}$, and many initial states $x \in X$, the time average  
+\[
+\frac{1}{N} \sum_{k=0}^{N-1} g(f^k(x))  
+\]  
+converges to the space average  
+\[
+\frac{1}{\mu(X)} \int g \, d\mu,  
+\]  
+assuming $\int g \, d\mu < \infty$.  
+
+```{remark}
+Let $g = \mathbb{1}_{B_\epsilon(x)}$, the indicator function of the ball $B_\epsilon(x)$. Then  
+\[
+\frac{1}{N} \sum_{k=0}^{N-1} \mathbb{1}_{B_\epsilon(x)}(f^k(x)) \to \frac{\mu(B_\epsilon(x))}{\mu(X)}  
+\]  
+as $N \to \infty$.  
+
+```
+
+
+```{definition,name='Ergodic'}
+A measure preserving tranformation $(X,\mathcal{A},\mu,f)$ is claled **ergodic** if every invareinet set $E$ is null ($\mu(E)=0$) or full (\mu(E)^c=0)
+```
+
+```{remark}
+**Irredusability** If $f:X\to X$ is ergodic $\nexists E$ such that $\mu(E)<1$ and $E$ is $f-$invaraient. So, that is "reasonable" spliting $f\mid_E$ and $f\mid_{X\setminus E}$ 
+  
+```
+
+```{proposition}
+$(X,\mathcal{A},\mu ,f$ is an measure preserving trasnformation on complete measure space. Then TAFE.
+  a. $\mu$ is ergodic
+  b. If $g:X\to \mathbb{R}$ is mesuarble and $g \circ f=g$ $\mu$-a.e. then $\exists c \in \mathbb{R}$ such that $g=c$ $\mu-$ a.e.
+  
+```
+
+```{proof}
+
+- **$b \implies a$**\
+Let $E$ be $\mu-$invarient. Write $g=\mathbb{1}_E$.
+Then observe the following
+\[g\circ f =\mathbb{1}_E \circ f = \mathbb{1}_{f^k(E)}=1_E=g\]
+This is beacuse,
+\[
+\begin{align}
+g\circ f (x)&=\mathbb{1}_E(f(x))\\
+&=\begin{cases}
+1 \text{ if } f(x) \in \\
+0 \text{ if } f(x) \not\in E\\
+\end{cases}\\
+&=\begin{cases}
+1 \text{ if } f(x) \in E\\
+0 \text{ if } f(x) \not\in E\\
+\end{cases}\\
+&=\begin{cases}
+1 \text{ if } x \in f^{-1}(E)=E\text{ Since $f$-invarinet}\\
+0 \text{ if } x \not\in f^{-1}(E)=E\\
+\end{cases}\\
+&= \mathbb{1}_E=g
+\end{align}
+\]
+Thus, $g$ is $f$-invareint. Hence, $g=c \mu-$a.e. (by the hypothesis)
+Since $g$ is getting value 1 and 0. Thus, $g=0$ or $g=1$ a.e.
+Thus, \(\mu(E)=0 or mu(E^c)=0\)
+
+
+- **$a \implies b$**. \
+Let $g=g\circ f \mu-$a.e. Then 
+\[A_t:=\{x\in X: g(x)>t\} ~\forall t.\]
+Then, 
+\[\begin{align}
+  f^{-1}(A_t) &= \{x\in X : f(x)\in A_t\}\\
+  &= \{x\in X : g(f(x))> t\}\\
+  &= \{x\in X : g(x)> t\} \text{( since $g \circ  f= g \mu-$a.e.)}\\
+  &= A_t
+  \end{align}\]
+ By ergodicity, \(\mu(A_t) = 0\) or \(\mu(A_t^c) = 0\).  
+Let $C:=\inf\{t:\mu(A_t)=0\}$. 
+  
+**Claim**: $g=C ~\mu-$a.e
+
+- If \( t \geq C \), then \( \mu(A_t) = 0 \) (by definition of \( C \)).
+- If \( t < C \), then \( \mu(A_t) > 0 \) (since \( t \) is not in the set where \( \mu(A_t) = 0\)).
+Then \(\mu(A_t^c) = 0\). Thus \(g(x)\leq t~\mu\)-a.e.
+
+
+
+```
+
+## Complete proof
+
+```{definition,name='strong mixing'}
+Aproblalabalaity preseveing trafomatio $(X,\mathcal{A},\mu,f)$ is called **mixing (strong mixing)** if for all $A,B\in \mathcal{A}$,
+\[\mu(A)\cap f^{-k}(B))\to mu(A)\mu(B)\text{ as } k\to \infty\]
+```
+
+```{remark}
+a. mixing $\approx$ asympothtic independence
+b. \[\frac{\mu(A) \cap f^{-k}(B)}{\mu(A)}\to \mu(B)\text{ as } k\to \infty\]
+```
+
+```{proposition}
+\[\text{Strong Mixing } \implies \text{Ergocity} \]
+```
+
+```{proof}
+Let $E \in \mathcal{A}$ be $f-$ invarient. Then,
+\[\mu(E \cap f^{-k}(E))\to mu(E)\mu(E)\text{ as } k\to \infty.\]
+Note that $\mu(E \cap f^{-k}(E))=mu(E \cap E)=\mu(E)$.
+This implies,
+\[\mu(E)\to mu(E)\mu(E)\text{ as } k\to \infty\]
+Thus, \(\mu(E)^2=\mu(E)\implies \mu(E)=0 \text{ or } \mu(E)=1\).
+```
+
+```{proposition}
+A probability-preserving transformation $(X, \mathcal{A}, \mu, f)$ is strongly mixing if and only if for all $g, h \in L^2(\mu)$,
+\[
+\int_X h \cdot g \circ f^k \, d\mu \to \int_X h \, d\mu \cdot \int_X g \, d\mu \quad \text{as } k \to \infty. (\#eq:star)
+\]
+```
+
+```{proof}
+$\Longleftarrow$\
+Assume that \@ref(eq:star) is true. Let $A,B\in \mathcal{A}$. Let $h=\mathbb{1}_A$ and $g\mathbb{1}_B$. Then observ ethat $g,h\in L^2(\mu)$.
+\[\int h g \circ f^k
+  =\int_X \mathbb{1}_A \mathbb{1}_B \circ f^k
+  =\int_X \mathbb{1}_A \mathbb{1}_{f^{-k}(B)}
+  =\int_X \mathbb{1}_{A\cap f^{-k}(B)}=\mu( A\cap f^{-k}(B))\]
+By \@ref(eq:star), 
+\[
+\int_X h \cdot g \circ f^k \, d\mu \to \int_X h \, d\mu \cdot \int_X g \, d\mu=\mu(A)\mu(B) \quad \text{ as } k \to \infty. \]
+Thus,
+\[\mu( A\cap f^{-k}(B))=\mu(A)\mu(B)\text{ as } k \to \infty.\]
+
+$\implies$\
+Assume the  mixing. By definition, for all \(A, B \in \mathcal{A}\),  
+   \[
+   \mu(A \cap f^{-k}(B)) \to \mu(A)\mu(B) \quad \text{as } k \to \infty.
+   \]  
+   In terms of indicator functions, this can be expressed as:  
+   \[
+   \int_X \mathbb{1}_A \cdot (\mathbb{1}_B \circ f^k) \, d\mu \to \int_X \mathbb{1}_A \, d\mu \cdot \int_X \mathbb{1}_B \, d\mu \quad \text{as } k \to \infty.
+   \]
+   
+   Let \(g = \sum_{i=1}^n c_i \mathbb{1}_{B_i}\) and \(h = \sum_{j=1}^m d_j \mathbb{1}_{A_j}\) be simple functions.  
+   Using linearity of the integral, we have:  
+   \[
+   \int_X h \cdot (g \circ f^k) \, d\mu = \sum_{i=1}^n \sum_{j=1}^m c_i d_j \int_X \mathbb{1}_{A_j} \cdot (\mathbb{1}_{B_i} \circ f^k) \, d\mu.
+   \]
+   By the assumption of strong mixing, each term satisfies:  
+   \[
+   \int_X \mathbb{1}_{A_j} \cdot (\mathbb{1}_{B_i} \circ f^k) \, d\mu \to \int_X \mathbb{1}_{A_j} \, d\mu \cdot \int_X \mathbb{1}_{B_i} \, d\mu.
+   \]
+   Substituting this into the sum, we obtain:  
+   \[
+   \int_X h \cdot (g \circ f^k) \, d\mu \to \left(\sum_{j=1}^m d_j \int_X \mathbb{1}_{A_j} \, d\mu\right) \cdot \left(\sum_{i=1}^n c_i \int_X \mathbb{1}_{B_i} \, d\mu\right).
+   \]
+   Simplifying, this becomes:  
+   \[
+   \int_X h \, d\mu \cdot \int_X g \, d\mu.
+   \]
+```
+
+## Complete proof 
+
+```{example}
+$R_\alpha$ with $\alpha\in \mathbb{Q}$ is **non-ergodic**
+```
+
+
+
+$\alpha\in \mathbb{Q}$ implies there exist $p,q\in.$ 
+\[
+E:=\bigcup_{i=0}^{q-1} \left[\frac{i}{q}, \frac{i}{q}+\frac{1}{2q}\right]
+\]
+Then $R_\alpha(E)=E.$ Thus, $E$ is invariant under $R_\alpha$
+For an example, if $\alpha =\frac{1}{5}$
+![](fig\dyamic_sys\fig8.png){width=50%}
+
+Then 
+\[
+\text{Leb}(E)=\frac{1}{2q}\cdot q= \frac{1}{2}\\
+\text{Leb}(E^c)=\frac{1}{2q}\cdot q= \frac{1}{2}
+\]
+Thus, $\text{Leb}(E)\neq 0$ and $\text{Leb}(E^c)\neq 0$.
+Hence this is not ergodic. 
+
+
+```{example}
+$R_\alpha$ with $\alpha\in \mathbb{Q}^c$ is **ergodic**.
+Let $E\subset S^1$ be invareint $g=\mathbb{1}_E$.
+Since \(g \in L^2(S^1)\), we can expand it in terms of its Fourier series:
+\[
+g(x) = \sum_{n \in \mathbb{Z}} c_n e^{2\pi i n x},
+\]
+where the Fourier coefficients are:
+\[
+c_n = \int_{S^1} g(x) e^{-2\pi i n x} \, dx.
+\]
+Using the invariance \(g(x + \alpha) = g(x)\), substitute into the Fourier series:
+\[
+\sum_{n \in \mathbb{Z}} c_n e^{2\pi i n (x + \alpha)} = \sum_{n \in \mathbb{Z}} c_n e^{2\pi i n x}.
+\]
+
+This simplifies to:
+\[
+\sum_{n \in \mathbb{Z}} c_n e^{2\pi i n \alpha} e^{2\pi i n x} = \sum_{n \in \mathbb{Z}} c_n e^{2\pi i n x}.
+\]
+Equating the Fourier coefficients on both sides gives:
+\[
+c_n e^{2\pi i n \alpha} = c_n, \quad \forall n \in \mathbb{Z}.
+\]
+
+If \(c_n \neq 0\), this implies:
+\[
+e^{2\pi i n \alpha} = 1.
+\]
+
+This is equivalent to \(n \alpha \in \mathbb{Z}.\)
+Since \(\alpha \notin \mathbb{Q}\), \(n \alpha \notin \mathbb{Z}\) for any \(n \neq 0\). Therefore, \(e^{2\pi i n \alpha} \neq 1\) for \(n \neq 0\), which forces \(c_n = 0\) for all \(n \neq 0\).
+  
+The only nonzero Fourier coefficient is \(c_0\), so:
+\[
+g(x) = c_0, \quad \text{a constant}.
+\]
+
+Since \(g(x) = \mathbb{1}_E\), this implies that \(E\) is either the empty set (\(g(x) = 0\)) or the whole circle (\(g(x) = 1\)).
+
+Thus, \(\text{Leb} = 0\) or \(\text{Leb}(E) = 1\), proving that \(R_\alpha\) is **ergodic** for \(\alpha \in \mathbb{Q}^c\).
+```
+
+## Write again
+
+```{exercise}
+$(E_2,\text{Leb})$ is strong mixing.
+
+**Hint**: _Use diadic intervls_
+\[\text{Leb}(A \cap E_2^{-k}(B))\to \text{Leb}(A)\text{Leb}(B)\text{ as } k \to \infty.\]
+
+_Here $A:=\left[ \frac{m}{2p}, \frac{m+1}{2p}\right],B:=\left[ \frac{k}{2q}, \frac{k+1}{2q}\right]$_
+  
+**Another Method**: _$\sum=\{0,1\}^N, \sigma (x_1,x_2,...)=(x_2,x_3,...)$_
+```
+
+## The probability point of view
+
+Let $(X,\mathcal{A},\mu,f)$ is probability dynamical system.
+
+1. Take $X$ to be the sample space.
+2. $\mathcal{A}$ is the collection of measurable events.
+3. \(\Pr(w\in E)=\mu(E),~E\in \mathcal{A}\)
+4. $g:X\to \mathbb{R}$ is a random variable.
+5. $X_n=g\circ f^n$ is stochastic process. 
+\[
+\Pr(X_{t_1}\in E_1,X_{t_2}\in E_2,...,X_{t_k}\in E_k)=
+\mu(\bigcap_{t=1}^k\{w\in X\mid g(f(w)\in E_{t_j}\})
+\]
+
+**In fact**: $\{X_n\}$ is stationary.
+
+```{theorem}
+Let \(X,\mathcal{A},\mu,f } be  probability preserving transformation. Suppose $\mu$ is eragodic then for $\mu$ almost everywhere $x \in X$ and $\forall g \in L^1(\mu)$.
+\[
+\frac{1}{n}\sum_{k=0}^{n-1} g(f^k(x)) \to \int_X g \, d\mu \text{ as } n \to \infty  
+\]
+```
+<center>
+![](fig\dyamic_sys\fig9.png){width=50%}
+</center>
+
+## Central Limit Therom
+
+Let $(X,\mathcal{A},\mu,f)$ is probability preserving transformation.
+
+
+- \[cor(g,h)=\int h g\circ f^n d\mu - \int h d\mu \int g d\mu~~ \forall g,h \in L^2(\mu)\]
+- \[cor(g,h) \to 0 \iff \text{ Strong Mixing}\]
+- Finding the rate of mixing (the rate of decay correlance) is a fundamental problem in dynamical system.
+- If we do not restrict the set from which we pick $g,h$ we cannot expect faster decay.
+
+```{proposition}
+For $E_2$ (the doubling map) if $h\in C^1_{[0,1]}$ and $g \in L^1(\mu)$ then $\exists\theta \in (0,1)$ such that 
+\[
+Cor_n(h,g)\leq C \theta^n ||h||_{C^1}||g||_{L^1(\mu)}
+  \]
+```
+
+```{definition}
+Let $(\mathcal{F}_n)_{n\in \mathbb{N}}$ be as equnace of non increasing $\sigma$-algebra  (i.e.: $\mathcal{F}_n \subseteq \mathcal{F}_{n+1}~ \forall n$) and $(X_n)$ be a sequance eof random varibles. Then $X_n$ is called **reverse martiangle diffrence** if 
+
+a. $X_n$ is $\mathcal{F}_n$ is measurable.
+a. $\mathbb{E}(X_{n}\mid \mathcal{F}_{n+1})=0\iff \forall A \in \mathcal{F}_{n+1} ~\int_A X_n d\mu=0$
+a. $\mathbb{E}(X_{n}\mid \mathcal{F}_{n-1})=0~\forall n\geq 1$ and $\mathbb{X}_0=0$
+```
+
+```{theorem}
+Let $(X_n)_{n\geq 1}$ be a **stionary, ergodic, direct or reverse martiangle diffrence** such that $\sigma \mathbb{E}(X_0^2)\in (0,\infty)$ and $\mathbb{E}(X_0)$. Then,
+\[
+\mu \left( \left\{x\in X \mid \frac{1}{\sqrt{n}}\sum_{j=0}^{n-1} X_j(x)\leq z\right\}\right) \to
+\frac{1}{2\pi\sigma^2}\int_{-\infty}^\infty e^{-\frac{t^2}{2 \sigma^2}}
+\]
+
+
+```
